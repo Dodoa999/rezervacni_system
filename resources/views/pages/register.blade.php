@@ -35,7 +35,7 @@
                 <div class="flex flex-col">
                     <a href="/login" class="text-blue-700 text-center hover:underline text-sm mb-2">Již máte účet? Přihlaste se</a>
 
-                    <button type="submit" 
+                    <button type="submit" action="/dashboard" 
                     class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide bg-neutral-950 
                     hover:bg-neutral-900 focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900 focus:shadow-outline transition-colors 
                     duration-200 rounded-md text-white">
