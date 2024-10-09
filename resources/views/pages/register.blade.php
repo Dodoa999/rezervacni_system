@@ -13,24 +13,14 @@
 
         <div class="h-screen px-12 w-1/3 flex items-center">
 
-            <form action="" class="rounded-lg w-full p-4 mb-4">
+            <form action="/register" method="POST" class="rounded-lg w-full p-4 mb-4">
                 @csrf
 
                 <h1 class="text-xl">Vytvořte si účet</h1>
 
-                <div class="w-full mx-auto">
-                    <input type="email" placeholder="E-mail" name="email"
-                    class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 
-                    ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 
-                    focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
-                </div>
-
-                <div class="w-full mx-auto">
-                    <input type="password" placeholder="Heslo" name="password"
-                    class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 
-                    ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 
-                    focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
-                </div>
+                <x-input type="text" name="name" placeholder="Jméno" />
+                <x-input type="email" name="email" placeholder="Email" />
+                <x-input type="password" name="password" placeholder="Heslo" />
 
                 <div class="flex flex-col">
                     <a href="/login" class="text-blue-700 text-center hover:underline text-sm mb-2">Již máte účet? Přihlaste se</a>
