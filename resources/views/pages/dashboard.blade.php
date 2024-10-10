@@ -28,10 +28,10 @@
                 @endforeach
             </div>
 
-            <x-modal title="Vytvořit nový záznám" action="Vytvořit nový záznam">
+            <x-modal title="Rezervujte si let" action="Vytvořit novou rezervaci">
                 <form action="/dashboard" method="POST" class="rounded-lg w-full *:mb-4">
                     @csrf
-                    <x-input type="text" name="type_flight" placeholder="Typ letu" />
+                    <x-select name="type_flight" placeholder="Typ letu" />
 
                     <x-input type="date" name="reserved_at" placeholder="Kdy se poletí?" />
 

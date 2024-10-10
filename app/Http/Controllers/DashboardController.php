@@ -25,7 +25,7 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'type_flight' => 'required',
+            'type_flight' => 'required|string',
             'reserved_at' => 'required|date',
         ],[
             'type_flight.required' => 'Vyplňte prosím typ letu',
@@ -34,13 +34,13 @@ class DashboardController extends Controller
         ]);
 
         $reservation = Reservation::create([
-            'type_flight' => $request->type_flight,
-            'reserved_at' => $request->reserved_at,
+            'type_flight' => $request->input('type_flight'),
+            'reserved_at' => $request->input('reserved_at'),
             'user_id' => Auth::user()->id,
         ]);
        
 
-       return redirect()->route('dashboard');   
+       return redirect()->route('dashboard')->with('success', 'Rezervace úspěšně vytvořena!');   
     }
 
     public function destroy(Request $request)
