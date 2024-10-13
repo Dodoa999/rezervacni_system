@@ -40,8 +40,30 @@ class DashboardController extends Controller
         ]);
        
 
-       return redirect()->route('dashboard')->with('success', 'Rezervace úspěšně vytvořena!');   
+       return redirect()->route('dashboard');   
     }
+
+
+    public function update(Request $request)
+{
+    $validated = $request->validate([
+        'type_flight' => 'required|string',
+        'reserved_at' => 'required|date',
+    ],[
+        'type_flight.required' => 'Vyplňte prosím typ letu',
+        'reserved_at.required' => 'Vyplňte prosím datum rezervace letu',
+        'reserved_at.date' => 'Datum rezervace musí být ve formátu YYYY-MM-DD',
+    ]);
+
+    $reservation = Reservation::where('id', $request->id)->first();
+
+    $reservation->update([
+        'type_flight' => $request->type_flight,
+        'reserved_at' => $request->reserved_at,
+    ]);
+
+    return redirect()->route('dashboard');
+}
 
     public function destroy(Request $request)
     {

@@ -2,12 +2,12 @@
         selectOpen: false,
         selectedItem: null,
         selectableItems: [
-            { title: 'Vyhlídkový let', value: 'vyhlidkovy_let' },
-            { title: 'Termický let', value: 'termicky_let' },
-            { title: 'Akrobatický let', value: 'akrobaticky_let' },
-            { title: 'Double tandem', value: 'double_tandem' },
-            { title: 'Triple tandem', value: 'triple_tandem' },
-            { title: 'Team building group', value: 'team_building_group' },
+            { title: 'Vyhlídkový let', value: 'Vyhlídkový let' },
+            { title: 'Termický let', value: 'Termický let' },
+            { title: 'Akrobatický let', value: 'Akrobatický let' },
+            { title: 'Double tandem', value: 'Double tandem' },
+            { title: 'Triple tandem', value: 'Triple tandem' },
+            { title: 'Team building group', value: 'Team building group' },
         ],
         selectableItemActive: null,
         selectId: $id('select'),
@@ -19,7 +19,7 @@
             this.selectedItem = this.selectedItem ?? this.selectableItems[0];
         },
         selectableItemIsActive(item) {
-            return this.selectableItemActive && this.selectableItemActive.value == item.value;
+            return this.selectedItem && this.selectedItem.value == item.value;
         },
         selectableItemActiveNext() {
             let index = this.selectableItems.indexOf(this.selectableItemActive);
@@ -98,6 +98,7 @@
     class="relative w-full">
 
     <!-- Skryté pole pro odeslání vybrané hodnoty -->
+    <label for="select" class="block mb-1 text-sm font-medium text-neutral-500">Vyberte si typ letu</label>
     <input type="hidden" name="{{ $name }}" :value="selectedItem ? selectedItem.value : ''">
 
     <button x-ref="selectButton" @click.prevent="selectOpen = !selectOpen"
@@ -124,7 +125,7 @@
                 :data-disabled="item.disabled"
                 :class="{ 'bg-neutral-100 text-gray-900': selectableItemIsActive(item), '' : !selectableItemIsActive(item) }"
                 @mousemove="selectableItemActive = item"
-                class="relative flex items-center h-full py-2 pl-8 text-gray-700 cursor-default select-none data-[disabled]:opacity-50 data-[disabled]:pointer-events-none">
+                class="relative flex items-center h-full py-2 pl-8 text-gray-700 cursor-default select-none hover:bg-neutral-100">
                 <svg x-show="selectedItem && selectedItem.value == item.value" class="absolute left-0 w-4 h-4 ml-2 stroke-current text-neutral-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>

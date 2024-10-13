@@ -26,3 +26,7 @@ Route::post('/dashboard', [DashboardController::class, 'store'])
 Route::post('/reservation_delete', [DashboardController::class, 'destroy'])
     ->middleware(['auth'])
     ->name('destroy.reservation');
+
+Route::post('/reservation_update', [DashboardController::class, 'update'])
+    ->middleware(['auth'])
+    ->name('update.reservation');
