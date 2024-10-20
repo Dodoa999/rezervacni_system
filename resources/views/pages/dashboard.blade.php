@@ -1,8 +1,8 @@
 <x-layouts.app>
-
+<div class="max-w-screen-xl mx-auto py-10">
     <div class="flex items-center w-full justify-between mb-6">
         <div>
-            <h1 class="text-2xl text-gray-500">Celkový počet rezervací {{ $reservations->count() }}</h1>
+            <h1 class="text-2xl text-gray-500">Celkový počet vašich rezervací je {{ $reservations->count() }} </h1>
         </div>
 
         <x-modal title="Vytvořit nový záznam">
@@ -81,6 +81,5 @@
         </div>
 
     </div>
-
-
+</div>
 </x-layouts.app>
