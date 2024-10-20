@@ -8,82 +8,55 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="bg-zinc-50">
+<body class="bg-zinc-100">
 
-    <header class="w-full px-6 antialiased bg-white">
-        <div class="mx-auto ">
-            <nav class="relative z-50 h-24 select-none" x-data="{ showMenu: false }">
-                <div class="container relative flex items-center justify-between h-24 mx-auto overflow-hidden font-medium
-                    md:overflow-visible lg:justify-center sm:px-4 md:px-2 lg:px-0">
-                    <div class="flex items-center justify-start w-1/4 h-full pr-4">
-                        <a href="/" class="flex items-center py-4 space-x-2 font-extrabold text-gray-900 md:py-0">
-                            <span class="flex items-center justify-center w-8 h-8 text-white bg-gray-900 rounded-full">
-                                <svg class="w-auto h-5 -translate-y-px" viewBox="0 0 69 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="m31.2 12.2-3.9 12.3-13.4.5-13.4.5 10.7 7.7L21.8 41l-3.9 12.1c-2.2 6.7-3.8 12.4-3.6 12.5.2.2 5-3 
-                                    10.6-7.1 5.7-4.1 10.9-7.2 11.5-6.8.6.4 5.3 3.8 10.5 7.5 5.2 3.8 9.6 6.6 9.8 6.4.2-.2-1.4-5.8-3.6-12.5l-3.9-12.2 
-                                    8.5-6.2c14.7-10.6 14.8-9.6-.4-9.7H44.2L40 12.5C37.7 5.6 35.7 0 35.5 0c-.3 0-2.2 5.5-4.3 12.2Z" fill="currentColor"/>
-                                </svg>
-                            </span>
-                            <span>LOGO</span>
-                        </a>
-                    </div>
+<header class="w-full px-52 bg-white">
+  <div class="flex items-center justify-between h-24 mx-auto container">
+    <!-- Levý blok (Logo) -->
+    <div class="flex items-center flex-1">
+      <a href="/" class="flex items-center space-x-2 font-extrabold text-gray-900">
+        <img src="{{ asset('images/litejproradost-logo.svg') }}" alt="Logo" class="w-32 h-auto">
+      </a>
+    </div>
 
-                    <div class="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute 
-                    lg:text-base md:bg-transparent md:p-0 md:relative md:flex" :class="{'flex fixed': showMenu, 'hidden': !showMenu }">
-                        <div class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none 
-                        md:relative md:flex md:flex-row">
-                            <a href="#_" class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden">
-                                <!-- Mobilní verze loga -->
-                            </a>
-                            <div class="flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row 
-                            md:items-center">
-                                <a href="/" class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-black md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 
-                                md:text-center">Domů</a>
-                                <a href="#_" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-black 
-                                lg:mx-3 md:text-center">FAQ</a>
-                                <a href="#_" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-black 
-                                lg:mx-3 md:text-center">Kontakt</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Střední blok (Navigace) -->
+    <div class="hidden md:flex justify-center flex-1 space-x-6">
+      <a href="/" class="font-medium text-gray-900">Domů</a>
+      <a href="#_" class="font-medium text-gray-700 hover:text-black">FAQ</a>
+      <a href="#_" class="font-medium text-gray-700 hover:text-black">Kontakt</a>
+    </div>
 
-                    <!-- Kontrola přihlášení uživatele -->
-                    <div class="flex flex-col items-start justify-between w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
-                        @if(auth()->check())
-                            <!-- Záhlaví pro přihlášeného uživatele -->
-                            <a href="/dashboard" class="block ">
-                                <div class="inline-flex items-center w-full px-2 py-2 text-sm font-medium leading-4 text-black md:w-auto md:rounded">   
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 
-                                        2.975m11.963
-                                        0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                    </svg>
-                                    <p class="ml-2">{{ auth()->user()->name }}</p>
-                                </div>
-                            </a>
-                            <a href="/logout" class="inline-flex items-center w-full px-5 px-6 py-3 text-sm font-medium leading-4 text-white bg-gray-900 
-                            md:w-auto md:rounded-lg 
-                            hover:bg-gray-800 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-gray-800">Odhlásit se</a>
-                        @else
-                            <!-- Záhlaví pro nepřihlášeného uživatele -->
-                            <div class="inline-flex items-center w-full px-2 py-2 text-sm font-medium leading-4 text-black md:w-auto md:rounded">
-                                <a href="/login" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-3 md:mr-2 lg:mr-3 md:w-auto">Přihlášení</a>
-                                <a href="/register" class="inline-flex items-center w-full px-5 px-6 py-3 text-sm font-medium leading-4 text-white bg-gray-800
-                                 md:w-auto md:rounded-lg hover:bg-gray-700 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 
-                                 focus:ring-gray-700">Registrace</a>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Pravý blok (Kontrola přihlášení) -->
+    <div class="flex justify-end flex-1">
+      @if(auth()->check())
+      <!-- Přihlášený uživatel -->
+      <div class="flex items-center space-x-4">
+        <a href="/dashboard" class="flex items-center space-x-2 text-black">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 
+         2.975m11.963
+         0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+          <p>{{ auth()->user()->name }}</p>
+        </a>
+        <a href="/logout" class="px-4 py-2 text-white bg-gray-900 rounded hover:bg-gray-800">Odhlásit se</a>
+      </div>
+      @else
+      <!-- Nepřihlášený uživatel -->
+      <div class="flex items-center space-x-4">
+        <a href="/login" class="text-gray-700">Přihlášení</a>
+        <a href="/register" class="px-4 py-2 text-white bg-gray-800 rounded hover:bg-gray-700">Registrace</a>
+      </div>
+      @endif
+    </div>
+  </div>
+</header>
 
-    <main class="container mx-auto w-[1280px] mt-8">
+    <main class="">
         {{ $slot }}
     </main>
 
-    <footer class="bg-white mt-36">
+    <footer class="bg-white">
     <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2">
             <div class="px-5 py-2">
