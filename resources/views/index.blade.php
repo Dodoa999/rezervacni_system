@@ -6,21 +6,17 @@
     
                     <div class="flex items-center justify-start px-6">
                         <div class="container max-w-none w-1/2 py-32 text-left">
-                          <h1 class="text-3xl font-bold leading-10 tracking-tight text-gray-900 sm:text-4xl md:text-7xl lg:text-8xl">
-                           Nezapomenutelný <br> let nad krajinou
+                          <h1 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 sm:text-2xl md:text-7xl lg:text-7xl">
+                           Nezapomenutelný let nad krajinou
                           </h1>
-                          <div class="mt-5 text-gray-400 md:mt-8 md:max-w-lg md:text-xl">
+                          <div class="mt-5 text-gray-900 md:mt-8 md:max-w-lg md:text-xl">
                                 Rezervujte si svůj tandem paraglidingový let.
                           </div>
                           <div class="flex flex-col items-start mt-8 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                             <span class="relative inline-flex w-full md:w-auto">
-                              <a href="/login" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium leading-6 text-white bg-gray-800 border border-transparent rounded-full xl:px-10 md:w-auto hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+                              <a href="/login" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium leading-6 text-white bg-gray-800 border
+                               border-transparent rounded-lg xl:px-10 md:w-auto hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                                 Rezervace
-                              </a>
-                            </span>
-                            <span class="relative inline-flex w-full md:w-auto">
-                              <a href="#_" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium leading-6 text-gray-800 bg-gray-100 border border-transparent rounded-full xl:px-10 md:w-auto hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
-                                Více info
                               </a>
                             </span>
                           </div>
@@ -96,7 +92,7 @@
 
 
      
-    <section class=" px-2 py-32 bg-white md:px-0">
+    <section class=" px-2 py-32 md:px-0">
         <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
           <div class="flex flex-wrap items-center sm:-mx-3">
             <div class="w-full md:w-1/2 md:px-3">
