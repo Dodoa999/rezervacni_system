@@ -98,10 +98,10 @@
             <div class="w-full md:w-1/2 md:px-3">
               <div class="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
                 <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <span class="block xl:inline">Jak to vlastně</span>
-                  <span class="block text-indigo-600 xl:inline" data-primary="indigo-600">bude probíhat?</span>
+                  <span class="block xl:inline">Jak to probíhá?</span>
+                  <span class="block text-gray-800 xl:inline" data-primary="gray-800"></span>
                 </h1>
-                <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">It's never been easier to build beautiful websites that convey your message and tell your story.</p>
+                <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl"></p>
               </div>
             </div>
             <div class="w-full md:w-1/2">
@@ -130,7 +130,7 @@
         
         <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
             <button @click="setActiveAccordion(id)" 
-                :class="`flex items-center justify-between w-full p-4 text-left select-none group-hover:underline ${activeAccordion == id ? 'bg-red-600 text-black' : ''}`">
+                :class="`flex items-center justify-between w-full p-4 text-left select-none group-hover:underline ${activeAccordion == id ? 'bg-gray-900 text-white' : ''}`">
                 <span>Není to nebezpečné?</span>
                 <svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': activeAccordion==id }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -146,7 +146,7 @@
             <!-- Druhá otázka -->
             <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
                 <button @click="setActiveAccordion(id)" 
-                    :class="{ 'text-sky-600 bg-sky-100': activeAccordion==id }" 
+                    :class="{ 'bg-gray-900 text-white': activeAccordion==id }" 
                     class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
                     <span>Jakou má letenka platnost?</span>
                     <svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': activeAccordion==id }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -163,7 +163,7 @@
             <!-- Třetí otázka -->
             <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
                 <button @click="setActiveAccordion(id)" 
-                    :class="{ 'text-sky-600 bg-sky-100': activeAccordion==id }" 
+                    :class="{ 'bg-gray-900 text-white': activeAccordion==id }" 
                     class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
                     <span>Co když mám strach z výšek?</span>
                     <svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': activeAccordion==id }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -180,7 +180,7 @@
             <!-- čtvrtá otázka -->
             <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
                 <button @click="setActiveAccordion(id)" 
-                    :class="{ 'text-sky-600 bg-sky-100': activeAccordion==id }" 
+                    :class="{ 'bg-gray-900 text-white': activeAccordion==id }" 
                     class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
                     <span>Je let něčím omezen? (váha, věk, kondice)</span>
                     <svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': activeAccordion==id }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -196,7 +196,7 @@
             <!-- pátá otázka -->
             <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
                 <button @click="setActiveAccordion(id)" 
-                    :class="{ 'text-sky-600 bg-sky-100': activeAccordion==id }" 
+                    :class="{ 'bg-gray-900 text-white': activeAccordion==id }" 
                     class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
                     <span>Kde se létá?</span>
                     <svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': activeAccordion==id }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -205,23 +205,22 @@
                 </button>
                 <div x-show="activeAccordion==id" x-collapse x-cloak>
                     <div class="p-4 pt-0 opacity-70">
-                        Javorový Vrch, Ondřejník - Skalka, Velký Javorník a Straník.                    </div>
+                        Javorový Vrch, Ondřejník - Skalka, Velký Javorník a Straník.                    
+                    </div>
                 </div>
             </div>
     
         </div>
     </div>
-
-<div class="flex justify-center space-x-8 mt-20 mb-10">
+<div><h2 class="text-5xl font-bold text-gray-800 mb-6 text-center pt-32">Nabídka tandemů</h2> </div>
+<div class="flex justify-center space-x-8 mt-10 mb-40">
     <!-- První karta -->
     <div class="rounded-lg overflow-hidden border border-neutral-200/60 bg-white text-neutral-700 shadow-sm w-[380px]">
       <div class="relative">
         <img src="{{ asset('images/Vyhlidka.jpg.webp') }}" class="w-full h-auto" />
       </div>
-      <div class="p-7">
-        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Product Name</h2>
-        <p class="mb-5 text-neutral-500">This card element can be used to display a product, post, or any other type of data.</p>
-        <button class="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium text-white transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-neutral-950 hover:bg-neutral-950/90">View Product</button>
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Vyhlídkový let</h2>
       </div>
     </div>
   
@@ -230,11 +229,9 @@
       <div class="relative">
       <img src="{{ asset('images/termika1.jpg.webp') }}" class="w-full h-auto" />
       </div>
-      <div class="p-7">
-        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Product Name</h2>
-        <p class="mb-5 text-neutral-500">This card element can be used to display a product, post, or any other type of data.</p>
-        <button class="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium text-white transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-neutral-950 hover:bg-neutral-950/90">View Product</button>
-      </div>
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Termický let</h2>
+        </div>
     </div>
   
     <!-- Třetí karta -->
@@ -242,41 +239,11 @@
       <div class="relative">
       <img src="{{ asset('images/akro.jpg.webp') }}" class="w-full h-auto" />
       </div>
-      <div class="p-7">
-        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Product Name</h2>
-        <p class="mb-5 text-neutral-500">This card element can be used to display a product, post, or any other type of data.</p>
-        <button class="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium text-white transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-neutral-950 hover:bg-neutral-950/90">View Product</button>
-      </div>
-    </div>
-  </div>
-
-<section class="w-full px-8 py-16 bg-gray-100 xl:px-8 mt-16">
-    <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col items-center md:flex-row">
-
-            <div class="w-full space-y-5 md:w-3/5 md:pr-16">
-                <p class="font-medium text-blue-500 uppercase" data-primary="blue-500">Building Businesses</p>
-                <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
-                    Changing The Way People Do Business.
-                </h2>
-                <p class="text-xl text-gray-600 md:pr-16">Learn how to engage with your visitors and teach them about your mission. We're revolutionizing the way customers and businesses interact.</p>
-            </div>
-
-            <div class="w-full mt-16 md:mt-0 md:w-2/5">
-                <div class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7" data-rounded="rounded-lg" data-rounded-max="rounded-full">
-                    <h3 class="mb-6 text-2xl font-medium text-center">Sign in to your Account</h3>
-                    <input type="text" name="email" id="email" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" data-rounded="rounded-lg" data-primary="blue-500" placeholder="Email address">
-                    <input type="password" name="password" id="password" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" data-rounded="rounded-lg" data-primary="blue-500" placeholder="Password">
-                    <div class="block">
-                        <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg" data-primary="blue-600" data-rounded="rounded-lg">Log Me In</button>
-                    </div>
-                    <p class="w-full mt-4 text-sm text-center text-gray-500">Don't have an account? <a href="#_" class="text-blue-500 underline">Sign up here</a></p>
-                </div>
-            </div>
-
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Akrobatický let</h2>
         </div>
     </div>
-</section>
+  </div>
 
 
 </x-layouts.app>

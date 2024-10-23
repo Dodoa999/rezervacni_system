@@ -82,4 +82,38 @@
 
     </div>
 </div>
+
+<div><h2 class="text-5xl font-bold text-gray-800 mb-6 text-center pt-32">Nabídka tandemů</h2> </div>
+<div class="flex justify-center space-x-8 mt-10 mb-40">
+    <!-- První karta -->
+    <div class="rounded-lg overflow-hidden border border-neutral-200/60 bg-white text-neutral-700 shadow-sm w-[380px]">
+      <div class="relative">
+        <img src="{{ asset('images/Vyhlidka.jpg.webp') }}" class="w-full h-auto" />
+      </div>
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Vyhlídkový let</h2>
+      </div>
+    </div>
+  
+    <!-- Druhá karta -->
+    <div class="rounded-lg overflow-hidden border border-neutral-200/60 bg-white text-neutral-700 shadow-sm w-[380px]">
+      <div class="relative">
+      <img src="{{ asset('images/termika1.jpg.webp') }}" class="w-full h-auto" />
+      </div>
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Termický let</h2>
+        </div>
+    </div>
+  
+    <!-- Třetí karta -->
+    <div class="rounded-lg overflow-hidden border border-neutral-200/60 bg-white text-neutral-700 shadow-sm w-[380px]">
+      <div class="relative">
+      <img src="{{ asset('images/akro.jpg.webp') }}" class="w-full h-auto" />
+      </div>
+      <div class="flex justify-center p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">Akrobatický let</h2>
+        </div>
+    </div>
+  </div>
+
 </x-layouts.app>
